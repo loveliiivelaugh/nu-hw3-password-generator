@@ -10,6 +10,12 @@ A small vanilla application that generates a random password based on specific e
 
 ![Screenshot](/assets/screenshot.png)
 
+## Deployment
+
+* Deployed with GitHub Pages.
+
+[Live Site]()
+
 ## Credits
 
 * A solid tutorial to use for inspiration.
