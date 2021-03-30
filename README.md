@@ -6,9 +6,11 @@
 
 A small vanilla application that generates a random password based on specific end user preferences, including lowercase, uppercase, numeric, and symbolic characters, as well as the length of the desired password.
 
-## Screenshot
+## Screenshots
 
 ![Screenshot](/assets/screenshot.png)
+
+![Gif](/assets/generate-password.gif)
 
 ## Deployment
 
