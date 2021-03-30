@@ -14,7 +14,7 @@ A small vanilla application that generates a random password based on specific e
 
 * Deployed with GitHub Pages.
 
-[Live Site]()
+[Live Site](https://loveliiivelaugh.github.io/nu-hw3-password-generator/)
 
 ## Credits
 
