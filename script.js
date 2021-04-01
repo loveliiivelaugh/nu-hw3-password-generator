@@ -7,9 +7,9 @@ let length = 0;
 
 //lengthPrompt, function handles the prompt and assigning the answer to the length vairable
 const lengthPrompt = () => {
-  const passwordLength = prompt(
-    "Please enter the length you would like your password to be?\n(Must be between 8 and 128 characters.)"
-    );
+  const passwordLength = paresInt(prompt(
+    "Please enter the length you would like your password to be?\n(Must be between 8 and 128 characters."
+    ));
     if (passwordLength < 8) {
       alert("Please enter a password length greater than 8 characters.");
     } 
