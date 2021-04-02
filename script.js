@@ -1,22 +1,15 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
+const generateBtn = document.querySelector("#generate");
+const passwordText = document.querySelector("#password"); //assign the html element with the id="password" to a variable.
 
 //assign two changeable variables, one to hold an empty string of characters and the other a 0 to hold the desired length of the password
-let characters = '';
-let length = 0;
+let characters = '', length = 0;
 
 //lengthPrompt, function handles the prompt and assigning the answer to the length vairable
 const lengthPrompt = () => {
-  const passwordLength = parseInt(prompt(
+  length = parseInt(prompt(
     "Please enter the length you would like your password to be?\n(Must be between 8 and 128 characters."
     ));
-    if (passwordLength < 8) {
-      alert("Please enter a password length greater than 8 characters.");
-    } 
-    else if (passwordLength > 128) {
-      alert("Please enter a password length less than 128 charaters.");
-    }
-    length = passwordLength;
 };
 //setLowerCase, checks if lowercase is true, (if we want lowercase characters in our password) if it is true then add all lowercase characters to our empty characters string
 const setLowerCase = isLowerCase => {
@@ -154,25 +147,24 @@ const validateInput = (password) => {
 };
 
 //generatePassword, function that calls functions in order that generate and validate the password.
-const generatePassword = () => {
-
-  const validatedPassword = validateInput(passwordCharacters());
-
-  return validatedPassword;
-};
+const generatePassword = () => { return validateInput(passwordCharacters()); };
 
 // Write password to the #password input.
 function writePassword() {
   
   lengthPrompt();//prompt function that asks and sets the desired password length.
-  lowercasePrompt();//prompt function that asks if we would like lowercase character types in our desired password.
-  uppercasePrompt();//prompt function that asks if we would like uppercase character types in our desired password.
-  symbolsPrompt();//prompt function that asks if we would like symbol character types in our desired password.
-  numbersPrompt();//prompt function that asks if we would like number character types in our desired password.
-
-  const passwordText = document.querySelector("#password"); //assign the html element with the id="password" to a variable.
-
-  passwordText.value = generatePassword(); //set the value of passwordText to the newly generated password returned by the generatePassword() function.
+  if (length < 8) {
+    alert("Please enter a password length greater than 8 characters.");
+  } 
+  else if (length > 128) {
+    alert("Please enter a password length less than 128 charaters.");
+  } else {
+    lowercasePrompt();//prompt function that asks if we would like lowercase character types in our desired password.
+    uppercasePrompt();//prompt function that asks if we would like uppercase character types in our desired password.
+    symbolsPrompt();//prompt function that asks if we would like symbol character types in our desired password.
+    numbersPrompt();//prompt function that asks if we would like number character types in our desired password.
+    passwordText.value = generatePassword(); //set the value of passwordText to the newly generated password returned by the generatePassword() function.
+  }
 }
 
 // Add event listener to generate button.
